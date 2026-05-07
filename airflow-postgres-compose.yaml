@@ -1,0 +1,29 @@
+---
+services:
+  postgres:
+    image: postgres:13.16
+    container_name: airflow-postgres
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+    # Expose Postgres only to the host machine (useful for debugging, safer than 0.0.0.0).
+    ports:
+      - "127.0.0.1:5432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+    restart: always
+    networks:
+      - airflow-net
+
+volumes:
+  postgres-db-volume:
+
+networks:
+  airflow-net:
+    external: true

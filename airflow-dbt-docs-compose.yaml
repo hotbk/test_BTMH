@@ -1,0 +1,10 @@
+---
+services:
+  dbt-docs:
+    image: nginx:1.27-alpine
+    container_name: airflow-dbt-docs
+    restart: unless-stopped
+    ports:
+      - "${DBT_DOCS_PORT:-8090}:80"
+    volumes:
+      - ${AIRFLOW_PROJ_DIR:-.}/data/dbt_docs:/usr/share/nginx/html:ro

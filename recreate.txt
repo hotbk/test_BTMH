@@ -1,0 +1,45 @@
+## Recommended: use split compose files
+
+To avoid editing a large monolithic compose file, run Airflow using the split compose files.
+Docker Compose will merge them when you pass multiple `-f` flags.
+
+### Bring the whole stack up (split mode)
+
+docker compose \
+	-f airflow-postgres-compose.yaml \
+	-f airflow-redis-compose.yaml \
+	-f airflow-core-compose.yaml \
+	-f airflow-workers-compose.yaml \
+	up -d
+
+### Recreate everything (split mode)
+
+docker compose \
+	-f airflow-postgres-compose.yaml \
+	-f airflow-redis-compose.yaml \
+	-f airflow-core-compose.yaml \
+	-f airflow-workers-compose.yaml \
+	up -d --force-recreate
+
+docker compose \
+  -f airflow-postgres-compose.yaml \
+  -f airflow-redis-compose.yaml \
+  -f airflow-core-compose.yaml \
+  -f airflow-workers-compose.yaml \
+  -f airflow-dbt-docs-compose.yaml \
+  up -d dbt-docs
+
+### Notes
+
+- All services must be on the same external network `airflow-net`.
+- If you update `.env`, recreate containers so env_file is reloaded.
+
+If you haven't created the network yet:
+
+docker network create airflow-net
+
+
+sudo rm -rf run_env/data/dbt_docs
+sudo mkdir -p run_env/data/dbt_docs
+sudo chown -R 1000:0 run_env/data/dbt_docs
+sudo chmod -R u+rwX,g+rwX,o-rwx run_env/data/dbt_docs

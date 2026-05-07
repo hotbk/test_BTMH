@@ -1,0 +1,24 @@
+# Keep Airflow add-ons compatible with the official Apache Airflow constraints (Python 3.12).
+# (Airflow itself is installed via the base Docker image + Dockerfile.)
+
+# Executors / core integrations (version controlled by Airflow constraints)
+apache-airflow-providers-celery
+
+# Providers used in this repo (versions controlled by Airflow constraints)
+apache-airflow-providers-postgres
+apache-airflow-providers-docker
+apache-airflow-providers-google
+apache-airflow-providers-smtp
+
+# dbt orchestration
+astronomer-cosmos==1.12.1
+
+# Demo DAG import-time dependencies (keeps scheduler/webserver DAG parsing happy)
+numpy==1.26.4
+pandas==2.1.4
+
+# Ingestion helpers (versions constrained by Airflow constraints during image build)
+google-cloud-storage
+pyarrow
+SQLAlchemy
+pyodbc
