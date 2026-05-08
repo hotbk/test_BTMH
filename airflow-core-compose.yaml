@@ -21,6 +21,10 @@ x-airflow-common:
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
     AIRFLOW_CONFIG: '/opt/airflow/config/airflow.cfg'
+    AIRFLOW__SCHEDULER__PARSING_PROCESSES: "1"
+    AIRFLOW__SCHEDULER__DAG_DIR_LIST_INTERVAL: "180"
+    AIRFLOW__SCHEDULER__MIN_FILE_PROCESS_INTERVAL: "90"
+    AIRFLOW__SCHEDULER__SCHEDULER_HEARTBEAT_SEC: "10"
     # Make the GCP connection available to execution-time context (triggerer / deferrable operators).
     # NOTE: docker-compose env_file does not expand nested ${VARS} inside values, so we build it here.
     AIRFLOW_CONN_GOOGLE_CLOUD_DEFAULT: "google-cloud-platform://?extra__google_cloud_platform__project=${GCP_PROJECT_ID}&extra__google_cloud_platform__key_path=/opt/airflow/config/gcp-service-account.json&extra__google_cloud_platform__location=${BIGQUERY_LOCATION}"
