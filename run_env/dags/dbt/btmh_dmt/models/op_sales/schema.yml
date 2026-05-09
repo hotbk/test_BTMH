@@ -1,0 +1,151 @@
+version: 2
+
+models:
+
+  - name: v_doanh_so
+    description: "Mart đơn hàng và doanh thu bán hàng"
+    columns:
+      - name: order_id
+        description: "Mã đơn hàng"
+      - name: order_line_id
+        description: "Mã dòng đơn hàng"
+      - name: item_id
+        description: "ID hàng"
+      - name: item_code
+        description: "Mã hàng hóa"
+      - name: item_name
+        description: "Tên hàng hóa"
+      - name: ma_nhom
+        description: "Nhóm hàng"
+      - name: created_date
+        description: "Ngày tạo bản ghi"
+      - name: created_time
+        description: "Thời điểm tạo bản ghi"
+      - name: expected_date
+        description: "Ngày dự kiến"
+      - name: bill_date
+        description: "Ngày hoá đơn"
+      - name: bill_id
+        description: "Mã hoá đơn"
+      - name: customer_id
+        description: "Mã khách hàng"
+      - name: company_code
+        description: "Mã công ty"
+      - name: warehouse_id
+        description: "Mã kho"
+      - name: shop_code
+        description: "Mã cửa hàng"
+      - name: quantity_by_unit
+        description: "Số lượng theo đơn vị tính"
+      - name: quantity
+        description: "Số lượng quy đổi"
+      - name: line_income
+        description: "Doanh thu dòng"
+      - name: est_cogs
+        description: "Giá vốn ước tính"
+      - name: cogs_per_unit
+        description: "Giá vốn trên đơn vị"
+      - name: est_gross_profit
+        description: "Lợi nhuận gộp ước tính"
+      - name: type
+        description: "Loại đơn hàng"
+
+  - name: v_doanh_thu
+    description: "Tổng hợp doanh thu bán hàng"
+    columns:
+      - name: Ngay_PhieuThu
+        description: "Ngày phiếu thu"
+      - name: Ma_Cong_Ty
+        description: "Mã công ty"
+      - name: ID_Phieu_thu
+        description: "Mã phiếu thu"
+      - name: InsertDate
+        description: "Ngày chèn bản ghi"
+      - name: Ma_KH
+        description: "Mã khách hàng"
+      - name: ID_Hang
+        description: "ID hàng"
+      - name: Sub_ID
+        description: "Mã phụ của đơn cọc"
+      - name: Ma_Kho
+        description: "Mã kho"
+      - name: So_Luong
+        description: "Số lượng theo đơn vị tính"
+      - name: SL_Chi_TT
+        description: "Số lượng chỉ thực tế"
+      - name: Gia_Von
+        description: "Giá vốn"
+      - name: Tien_PhieuThu1
+        description: "Doanh thu thực tế"
+
+  - name: v_monthly_sales
+    description: "Tổng hợp doanh số theo tháng"
+    columns:
+      - name: year_month
+        description: "Năm/tháng"
+      - name: order_id
+        description: "Mã đơn hàng"
+      - name: customer_id
+        description: "Mã khách hàng"
+      - name: Ma_Kho
+        description: "Mã kho"
+      - name: channel
+        description: "Kênh bán hàng"
+      - name: warehouse_raw
+        description: "Kho thô"
+      - name: Nganh_hang
+        description: "Ngành hàng"
+      - name: nhom_sp_nho
+        description: "Nhóm sản phẩm nhỏ"
+      - name: quantity_by_unit
+        description: "Số lượng theo đơn vị tính"
+      - name: quantity
+        description: "Số lượng chỉ"
+      - name: line_amount
+        description: "Thành tiền theo đơn giá"
+      - name: line_income
+        description: "Doanh thu thực tế"
+      - name: cogs
+        description: "Giá vốn"
+      - name: gross_profit
+        description: "Lợi nhuận gộp"
+
+  - name: v_monthly_sales_banvi
+    description: "Tổng hợp doanh số theo tháng theo bản vị"
+    columns:
+      - name: year_month
+        description: "Năm/tháng"
+      - name: order_id
+        description: "Mã đơn hàng"
+      - name: customer_id
+        description: "Mã khách hàng"
+      - name: Ma_Kho
+        description: "Mã kho"
+      - name: channel
+        description: "Kênh bán hàng"
+      - name: warehouse_raw
+        description: "Kho thô"
+      - name: Nganh_hang
+        description: "Ngành hàng"
+      - name: nhom_sp_nho
+        description: "Nhóm sản phẩm nhỏ"
+      - name: Ma_Hang
+        description: "Mã hàng hóa"
+      - name: Ten_Hang
+        description: "Tên hàng hóa"
+      - name: T_luong
+        description: "Trọng lượng"
+      - name: quantity_by_unit
+        description: "Số lượng theo đơn vị tính"
+      - name: quantity
+        description: "Số lượng chỉ"
+      - name: line_amount
+        description: "Thành tiền theo đơn giá"
+      - name: line_income
+        description: "Doanh thu thực tế"
+      - name: cogs
+        description: "Giá vốn"
+      - name: gross_profit
+        description: "Lợi nhuận gộp"
+
+  

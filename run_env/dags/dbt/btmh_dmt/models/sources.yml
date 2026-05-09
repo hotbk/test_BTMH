@@ -1,0 +1,219 @@
+version: 2
+
+sources:
+  - name: ggs
+    schema: "{{ var('ggs_schema') | lower }}"
+    tables:
+      - name: ggs_mkt
+      - name: ggs_kcs
+      - name: ggs_co_cau
+      - name: ggs_ke_hoach
+      - name: ggs_trang_suc_loi
+      - name: ggs_tich_tru_loi
+      - name: ggs_qlhd
+      - name: xlsx_ke_hoach_kinh_doanh
+      - name: xlsx_doanh_thu_cu
+
+  - name: stg_ggs
+    schema: stg_ggs
+    tables:
+      - name: vtt_exchange_rate
+      - name: ggs_gm_target
+      - name: d_store
+
+  - name: oneoffice
+    schema: "{{ var('oneoffice_schema') | lower }}"
+    tables:
+      - name: ns_ho_so_nhan_su
+      - name: ns_lich_su_cong_viec
+
+  - name: crawl_data
+    schema: crawl_data 
+    tables:
+      - name: vnd_usd
+      - name: xau_usd
+
+  - name: stg_augges_224
+    schema: stg_augges_224
+    tables:
+      - name: csb
+      - name: dmdt
+      - name: dmdvt
+      - name: dmh
+      - name: dmkmp
+      - name: dmnmm
+      - name: dmnganh
+      - name: dmkho
+      - name: dmnh
+      - name: dmnhang
+      - name: dmqttg
+      - name: dmtt
+      - name: dmvbmm
+      - name: dmvbtg
+      - name: dmvbtg_a
+      - name: dmnv
+      - name: dmnx
+      - name: dmphuong
+      - name: dmquan
+      - name: dmthe
+      - name: dmtinh
+      - name: dmuser
+      - name: htk
+      - name: slbld
+      - name: slblm
+      - name: sldcd
+      - name: sldcm
+      - name: slnxd
+      - name: slnxm
+      - name: slvbdcd
+      - name: slvbdcm
+
+  - name: stg_augges_225
+    schema: stg_augges_225
+    tables:
+      - name: csb
+      - name: dmdt
+      - name: dmdvt
+      - name: dmh
+      - name: dmkmp
+      - name: dmnmm
+      - name: dmnganh
+      - name: dmnh
+      - name: dmnhang
+      - name: dmqttg
+      - name: dmtt
+      - name: dmvbmm
+      - name: dmvbtg
+      - name: dmvbtg_a
+      - name: dmkho
+      - name: dmnv
+      - name: dmnx
+      - name: dmphuong
+      - name: dmquan
+      - name: dmthe
+      - name: dmtinh
+      - name: dmuser
+      - name: htk
+      - name: slbld
+      - name: slblm
+      - name: sldcd
+      - name: sldcm
+      - name: slnxd
+      - name: slnxm
+      - name: slvbdcd
+      - name: slvbdcm
+
+  - name: stg_augges_226
+    schema: stg_augges_226
+    tables:
+      - name: csb
+      - name: dmdt
+      - name: dmdvt
+      - name: dmh
+      - name: dmkmp
+      - name: dmnmm
+      - name: dmnganh
+      - name: dmkho
+      - name: dmnh
+      - name: dmnhang
+      - name: dmqttg
+      - name: dmtt
+      - name: dmvbmm
+      - name: dmvbtg
+      - name: dmvbtg_a
+      - name: dmnv
+      - name: dmnx
+      - name: dmphuong
+      - name: dmquan
+      - name: dmthe
+      - name: dmtinh
+      - name: dmuser
+      - name: htk
+      - name: slbld
+      - name: slblm
+      - name: sldcd
+      - name: sldcm
+      - name: slnxd
+      - name: slnxm
+      - name: slvbdcd
+      - name: slvbdcm
+
+  - name: stg_augges_227
+    schema: stg_augges_227
+    tables:
+      - name: csb
+      - name: dmdt
+      - name: dmdvt
+      - name: dmh
+      - name: dmkmp
+      - name: dmnmm
+      - name: dmnganh
+      - name: dmkho
+      - name: dmnh
+      - name: dmnhang
+      - name: dmqttg
+      - name: dmtt
+      - name: dmvbmm
+      - name: dmvbtg
+      - name: dmvbtg_a
+      - name: dmnv
+      - name: dmnx
+      - name: dmphuong
+      - name: dmquan
+      - name: dmthe
+      - name: dmtinh
+      - name: dmuser
+      - name: htk
+      - name: slbld
+      - name: slblm
+      - name: sldcd
+      - name: sldcm
+      - name: slnxd
+      - name: slnxm
+      - name: slvbdcd
+      - name: slvbdcm
+
+  - name: stg_augges_sg
+    schema: stg_augges_sg
+    tables:
+      - name: csb
+      - name: dmdt
+      - name: dmdvt
+      - name: dmh
+      - name: dmkmp
+      - name: dmnmm
+      - name: dmnganh
+      - name: dmkho
+      - name: dmnh
+      - name: dmnhang
+      - name: dmqttg
+      - name: dmtt
+      - name: dmvbmm
+      - name: dmvbtg
+      - name: dmvbtg_a
+      - name: dmnv
+      - name: dmnx
+      - name: dmphuong
+      - name: dmquan
+      - name: dmthe
+      - name: dmtinh
+      - name: dmuser
+      - name: htk
+      - name: slbld
+      - name: slblm
+      - name: sldcd
+      - name: sldcm
+      - name: slnxd
+      - name: slnxm
+      - name: slvbdcd
+      - name: slvbdcm
+
+  - name: stg_221_khach_hang
+    schema: stg_221_khach_hang
+    tables:
+      - name: stg_khach_hang
+
+  - name: dmt
+    schema: "{{ ((target.dataset | string | trim) ~ '_fact') if not (target.dataset | string | trim).endswith('_fact') else (target.dataset | string | trim) }}"
+    tables:
+      - name: f_ton_kho

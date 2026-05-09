@@ -25,3 +25,8 @@ RUN pip install --no-cache-dir \
     "apache-airflow==${AIRFLOW_VERSION}" \
     -r /requirements.txt \
     --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-3.12.txt"
+
+# Keep dbt isolated from Airflow's constrained dependency set.
+RUN python -m venv /home/airflow/.local/dbt-venv && \
+    /home/airflow/.local/dbt-venv/bin/pip install --no-cache-dir dbt-bigquery==1.10.3 && \
+    ln -sf /home/airflow/.local/dbt-venv/bin/dbt /home/airflow/.local/bin/dbt

@@ -1,0 +1,207 @@
+version: 2
+
+models:
+  - name: f_kcs_merged
+    description: "Kiểm soát chất lượng sản phẩm"
+    columns:
+      - name: ma_hang
+        description: "Mã hàng hóa"
+      - name: ma_vach
+        description: "Mã vạch"
+
+  - name: f_co_cau
+    description: "bảng f_co_cau"
+    columns:
+      - name: composite_id
+        description: "ID tổng hợp giữa ID đại chỉ và Mã cửa hàng"
+        tests:
+          - not_null
+          - unique
+      - name: id_dai_chi
+        description: "ID dải chỉ"
+      - name: ten_dai_chi    
+        description: "Tên dải chỉ"
+      - name: dai_chi
+        description: "Dải chỉ"
+      - name: ma_ch
+        description: "Mã cửa hàng"
+      - name: sn
+        description: ""
+      - name: cc
+        description: "Cơ cấu"
+
+  - name: f_ggs_ke_hoach_kinh_doanh
+    description: "bảng ggs_ke_hoach_kinh_doanh"
+
+  - name: f_ke_hoach_kinh_doanh
+    description: ""
+
+  - name: f_hang_ton_kho
+    description: ""
+
+  - name: f_doanh_thu
+    description: "Thông tin phiếu thu"
+    columns:
+      - name: ID
+        description: "Primary key"
+        tests:
+          - not_null
+          - unique
+      - name: Ma_Cong_Ty
+        description: "Mã công ty"
+      - name: ID_Phieu_thu
+        description: "ID phiếu thu"
+      - name: STT_TrenPhieu
+        description: "Số thứ tự trên phiếu"
+      - name: Ngay_PhieuThu
+        description: "Ngày lập phiếu"
+      - name: ID_Hang
+        description: "ID hàng"
+      - name: Ma_dong
+        description: "Mã dòng (null là hàng hóa thường, 1 và 9 là khuyến mãi theo đơn)"
+      - name: So_Luong
+        description: "Số lượng theo đơn vị tính"
+      - name: SL_Thuc_Te
+        description: "Số lượng thực tế (quy đổi theo đơn vị quy đổi)"
+      - name: SL_Qd
+        description: "Số lượng quy đổi"
+      - name: SL_Chi_TT
+        description: "Số lượng chỉ thực tế"
+      - name: Don_gia_ban
+        description: "Đơn giá bán"
+      - name: Thanh_tien_theo_DG_ban
+        description: "Thành tiền theo đơn giá bán"
+      - name: Gia_Von
+        description: "Giá vốn"
+      - name: TyLe_Giam_Gia_TP
+        description: "Tỷ lệ giảm giá trên thành phẩm"
+      - name: Tien_Giam_Gia_TP
+        description: "Tiền giảm giá trên thành phẩm"
+      - name: CK_phan_bo
+        description: "Chiết khấu phân bổ"
+      - name: CK_the_phan_bo
+        description: "Chiết khấu thẻ phân bổ"
+      - name: CK_TheCn_phan_bo
+        description: "Chiết khấu thẻ CN phân bổ"
+      - name: CK_TheMg_phan_bo
+        description: "Chiết khấu thẻ MG phân bổ"
+      - name: Tien_PhieuThu1
+        description: "Thành tiền thực tế theo phiếu thu"
+      - name: Tien_Chiet_Khau
+        description: "Tiền chiết khấu"
+      - name: Dien_giai_Phieu_thu
+        description: "Diễn giải phiếu thu"
+      - name: Ma_Kho
+        description: "Mã kho"
+      - name: Quay
+        description: "Quầy"
+      - name: Ma_Nv
+        description: "Mã nhân viên"
+      - name: Ma_NvKT
+        description: "Mã nhân viên kế toán"
+      - name: Ma_KH
+        description: "Mã khách hàng"
+      - name: Ma_Dt
+        description: "Mã đối tác"
+      - name: ctkm_kh
+        description: "Chương trình khuyến mãi khách hàng"
+      - name: ctkm_nd
+        description: "Chương trình khuyến mãi nội dung"
+      - name: ctkm_kh_pt
+        description: "Chương trình khuyến mãi khách hàng phần trăm"
+      - name: ctkm_nd_pt
+        description: "Chương trình khuyến mãi nội dung phần trăm"
+      - name: so_the_voucher
+        description: "Số thẻ voucher"
+      - name: ten_the_voucher
+        description: "Tên thẻ voucher"
+      - name: No_Tk
+        description: "Nợ tài khoản"
+      - name: Co_Tk
+        description: "Có tài khoản"
+      - name: InsertDate
+        description: "Ngày tạo bản ghi"
+      - name: Dc_Giao
+        description: "Địa chỉ giao hàng"
+      - name: Sub_ID
+        description: "ID Phiếu cọc gắn với phiếu thu"
+      - name: ID_Dv
+        description: "ID dịch vụ"
+
+  - name: f_dat_coc
+    description: "Thông tin đơn cọc"
+    columns:
+      - name: Composite_ID
+        description: "ID tổng hợp giữa Company, ID và STT_Tren_Phieu"
+        tests:
+          - not_null
+          - unique
+      - name: Nguon
+        description: "Nguồn dữ liệu"
+      - name: ID
+        description: "ID đơn cọc"
+      - name: STT_Tren_Phieu
+        description: "Số thứ tự trên phiếu"
+      - name: Ma_Kho
+        description: "Mã kho"
+      - name: ID_Hang
+        description: "ID hàng"
+      - name: So_Luong
+        description: "Số lượng theo đơn vị tính"
+      - name: Ty_Gia
+        description: "Tỷ giá"
+      - name: Tong_Tien
+        description: "Tổng tiền cọc"
+      - name: Ma_KH
+        description: "Mã khách hàng"
+      - name: Ma_Nv
+        description: "Mã nhân viên"
+      - name: Ngay
+        description: "Ngày cọc (nhân viên có thể tự điền)"
+      - name: Ngay_Giao
+        description: "Ngày hẹn giao khách (nhân viên có thể tự điền)"
+      - name: Dien_Giai
+        description: "Diễn giải"
+      - name: IsCopy
+        description: ""
+      - name: MarkRow
+        description: ""
+      - name: Sub_ID
+        description: "Nếu đã tồn tại Phiếu thu liên quan đến đơn cọc này thì ghi Sub_ID của Phiếu thu vào"
+      - name: ID_Phieu_Thu
+        description: "ID Phiếu thu liên quan đến đơn cọc này"
+      - name: Thoi_diem_tao
+        description: "Thời điểm tạo bản ghi (system generate)"
+      - name: LastEdit
+        description: "Thời điểm chỉnh sửa bản ghi gần nhất (system generate)"
+      - name: ID_Dv
+        description: "ID dịch vụ"
+      - name: ID_Phieu_Thu_All
+        description: "ID phiếu thu tổng hợp (nếu có nhiều phiếu thu liên quan đến đơn cọc này)"
+
+  - name: f_nhap_xuat
+    description: "Nhập xuất (union SlNxD/SlNxM nhiều nguồn; quy đổi trọng lượng theo nhóm/hàng)"
+    columns:
+      - name: So_Ct
+        description: "Số chứng từ (lấy từ SlNxM.So_Ct)"
+
+  - name: f_b2b
+    description: "B2B từ F_Nhap_Xuat"
+
+  - name: f_ty_gia
+    description: "Tỷ giá theo ngày (lấy từ DmVBTG/DmVBTG_A)"
+
+  - name: f_qlhd
+    description: "QLHD"
+
+  - name: f_nhansu_tonghop_2
+    description: "Tổng hợp nhân sự theo tháng "
+
+  - name: f_ns
+    description: "Nhân sự theo tháng"
+
+  - name: f_dieu_chuyen
+    description: "Điều chuyển"
+
+  - name: f_mkt_digital
+    description: "MKT Digital"

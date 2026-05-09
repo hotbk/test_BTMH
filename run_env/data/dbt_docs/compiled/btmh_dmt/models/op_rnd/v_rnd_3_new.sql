@@ -1,0 +1,23 @@
+SELECT
+    r.*,
+    c.PRODUCT_SEGMENT_NEW,
+    c.`PRODUCT SEGMENT NEW`,
+    c.PRODUCT_LINE_NEW,
+    c.`PRODUCT LINE NEW`,
+    c.PRODUCT_CATEGORY_NEW,
+    c.`PRODUCT CATEGORY NEW`,
+    c.JEWELRY_TYPE_NEW,
+    c.`JEWELRY TYPE NEW`,
+    c.MATERIAL_NEW,
+    c.`MATERIAL NEW`,
+    c.COLLECTION_NEW,
+    c.`COLLECTION NEW`,
+    c.CLASSIFICATION_METHOD,
+    c.`CLASSIFICATION METHOD`,
+    c.CAN_XEM_XET,
+    c.`CAN XEM XET`,
+    c.LY_DO_XEM_XET,
+    c.`LY DO XEM XET`
+FROM `btmh-airflow-dbt-lab-2026`.`btmh_dwh_mart`.`r_rnd_3` r
+LEFT JOIN `btmh-airflow-dbt-lab-2026`.`btmh_dwh_dim`.`d_ma_mau_new` c
+    ON CAST(r.MA_MAU AS STRING) = CAST(c.MA_MAU AS STRING)

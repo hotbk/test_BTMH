@@ -1,0 +1,740 @@
+version: 2
+
+models:
+  - name: d_hach_toan
+    description: "Thông tin hạch toán"
+    columns:
+      - name: ID
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: Nguon
+        description: "Nguồn dữ liệu"
+        tests:
+          - not_null
+      - name: Ma_Ct
+        description: "Mã chứng từ"
+      - name: Ma_Ht
+        description: "Mã hạch toán"
+      - name: Ten_Ht
+        description: "Tên hạch toán"
+      - name: No_tk
+        description: "Nợ Tài khoản"
+      - name: Co_tk
+        description: "Có Tài khoản"
+
+  - name: d_ngan_hang
+    description: "Thông tin ngân hàng"
+    columns:
+      - name: So_Tk
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: Ten_Nh
+        description: "Tên ngân hàng"
+      - name: Nguon
+        description: "Nguồn dữ liệu"
+        tests:
+          - not_null
+      - name: Ma_Nh
+        description: "Mã ngân hàng"
+      - name: ID_Dv
+        description: "ID dịch vụ"
+      - name: Ten_NhE
+        description: "Tên ngân hàng (in hoa không dấu)"
+      - name: Moi_Mo
+        description: "Nơi mở tài khoản"
+      - name: Dia_Chi
+        description: "Địa chỉ ngân hàng"
+      - name: ID_Nhom
+        description: "ID nhóm ngân hàng"
+      - name: ID_Loai
+        description: "ID loại ngân hàng"
+      - name: Ghi_Chu
+        description: "Ghi chú"
+      - name: UserEdit
+        description: "Người cập nhật"
+      - name: UserID
+        description: "ID người cập nhật"
+      - name: LastEdit
+        description: "Thời gian cập nhật cuối cùng"
+      - name: InsertDate
+        description: "Thời gian tạo bản ghi"
+      - name: Inactive
+        description: "Trạng thái hoạt động"
+      - name: Ky_Hieu
+        description: "Ký hiệu ngân hàng"
+      - name: Thu_Huong
+        description: "Thụ hưởng ngân hàng"
+
+  - name: d_ctkm
+    description: "Thông tin chương trình khuyến mãi"
+    columns:
+      - name: ID
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: Nguon
+        description: "Nguồn dữ liệu"
+        tests:
+          - not_null
+      - name: ID_Dv
+        description: "ID dịch vụ"
+      - name: Tu_Ngay
+        description: "Ngày bắt đầu"
+      - name: Den_Ngay
+        description: "Ngày kết thúc"
+      - name: Ky_Hieu
+        description: "Ký hiệu chương trình khuyến mãi"
+      - name: ListDay
+        description: "Danh sách ngày áp dụng chương trình khuyến mãi"
+      - name: Tu_Gio
+        description: "Giờ bắt đầu"
+      - name: Den_Gio
+        description: "Giờ kết thúc"
+      - name: Tu_Phut
+        description: "Phút bắt đầu"
+      - name: Den_Phut
+        description: "Phút kết thúc"
+      - name: GT_HD
+        description: "Giá trị hóa đơn tối thiểu để áp dụng chương trình khuyến mãi"
+      - name: CK_Lan2
+        description: "Chiết khấu lần 2"
+      - name: CK_Lan2Sx
+        description: "Chiết khấu lần 2 sản xuất"
+      - name: Sl_CSB
+        description: "Số lượng cần bán để áp dụng chương trình khuyến mãi"
+      - name: HD_NG
+        description: ""
+      - name: HD_All
+        description: ""
+      - name: ListID_Sp
+        description: "Danh sách ID sản phẩm áp dụng chương trình khuyến mãi"
+      - name: L_Sp
+        description: "Loại sản phẩm áp dụng chương trình khuyến mãi"
+      - name: ListID_Dt
+        description: "Danh sách ID đối tác áp dụng chương trình khuyến mãi"
+      - name: L_Dt
+        description: "Loại đối tác áp dụng chương trình khuyến mãi"
+      - name: ListID_Kho
+        description: "Danh sách ID kho áp dụng chương trình khuyến mãi"
+      - name: ListID_NK
+        description: ""
+      - name: Tyle_DS
+        description: "Tỷ lệ doanh số để áp dụng chương trình khuyến mãi"
+      - name: Noi_Dung
+        description: "Nội dung chương trình khuyến mãi"
+      - name: Tt
+        description: ""
+      - name: Status
+        description: "Trạng thái chương trình khuyến mãi"
+      - name: CSB1Lan
+        description: ""
+      - name: isNM
+        description: ""
+      - name: InActive
+        description: "Trạng thái hoạt động"
+      - name: UserID
+        description: "ID người cập nhật"
+      - name: CSB1SN
+        description: ""
+      - name: LastEdit
+        description: "Thời gian cập nhật cuối cùng"
+      - name: InsertDate
+        description: "Thời gian tạo bản ghi"
+      - name: MarkRow
+        description: ""
+      
+  - name: d_the
+    description: "Thông tin thẻ khuyến mại"
+    columns:
+      - name: ID
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: Nguon
+        description: "Nguồn dữ liệu"
+        tests:
+          - not_null
+      - name: ID_Dv
+        description: "ID dịch vụ"
+      - name: So_The
+        description: "Số thẻ"
+      - name: Ten_The
+        description: "Tên thẻ"
+      - name: ID_Nhom
+        description: "ID nhóm thẻ"
+      - name: ID_LThe
+        description: "ID loại thẻ"
+      - name: ID_Dt
+        description: "ID đối tác sử dụng thẻ"
+      - name: Ngay_Cap
+        description: "Ngày cấp thẻ"
+      - name: Tu_Ngay
+        description: "Ngày bắt đầu sử dụng thẻ"
+      - name: Den_Ngay
+        description: "Ngày kết thúc sử dụng thẻ"
+      - name: Con_Lai
+        description: "Số ngày còn lại"
+      - name: So_Luong
+        description: "Số lượng phát hành"
+      - name: Tu_Seri
+        description: "Từ số seri"
+      - name: Den_Seri
+        description: "Đến số seri"
+      - name: ID_KhThe
+        description: "ID khách hàng sử dụng thẻ"
+      - name: DaKh
+        description: ""
+      - name: Diem_Dk
+        description: "Điểm DK"
+      - name: Diem_DkQd
+        description: "Điểm DKQD"
+      - name: IsTheEdit
+        description: ""
+      - name: ID_HD
+        description: "ID hợp đồng"
+      - name: Ghi_Chu
+        description: "Ghi chú"
+      - name: IsAuto
+        description: "Tự động"
+      - name: IsNewTN
+        description: ""
+      - name: IsEDitTN
+        description: ""
+      - name: Inactive
+        description: "Trạng thái hoạt động"
+      - name: UserID
+        description: "ID người cập nhật"
+      - name: LastEdit
+        description: "Thời gian cập nhật cuối cùng"
+      - name: InsertDate
+        description: "Thời gian tạo bản ghi"
+      - name: UserEdit
+        description: "Người cập nhật"
+
+  - name: d_kho
+    description: "Thông tin Kho hàng"
+    columns:
+      - name: Ma_Kho
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: Ten_Kho
+        description: "Tên kho"
+      - name: Ten_KhoE
+        description: "Tên kho (in hoa không dấu)"
+      - name: Thu_Kho
+        description: "Thủ kho"
+      - name: ID_NKho
+        description: "ID nhóm kho"
+      - name: Dia_Chi
+        description: "Địa chỉ kho"
+      - name: F_LoGo
+        description: "Logo kho"
+      - name: IsAmKho
+        description: ""
+      - name: Dien_Tich
+        description: "Diện tích kho"
+      - name: Ky_Hieu
+        description: "Ký hiệu kho"
+      - name: Ghi_Chu
+        description: "Ghi chú"
+      - name: No_TkHd
+        description: "Nợ TKHD"   
+      - name: Co_TkHd
+        description: "Có TKHD"  
+      - name: Inactive
+        description: "Trạng thái hoạt động"
+
+  - name: d_kho_1
+    description: "Thông tin Kho hàng theo từng nguồn (giữ cột Nguon, không dedup)"
+    columns:
+      - name: Nguon
+        description: "Nguồn dữ liệu (code trong vars.dkho_sources)"
+        tests:
+          - not_null
+      - name: Ma_Kho
+        description: "Mã kho"
+        tests:
+          - not_null
+      - name: Ten_Kho
+        description: "Tên kho"
+      - name: Ten_KhoE
+        description: "Tên kho (in hoa không dấu)"
+      - name: Thu_Kho
+        description: "Thủ kho"
+      - name: ID_NKho
+        description: "ID nhóm kho"
+      - name: Dia_Chi
+        description: "Địa chỉ kho"
+      - name: F_LoGo
+        description: "Logo kho"
+      - name: IsAmKho
+        description: ""
+      - name: Dien_Tich
+        description: "Diện tích kho"
+      - name: Ky_Hieu
+        description: "Ký hiệu kho"
+      - name: Ghi_Chu
+        description: "Ghi chú"
+      - name: No_TkHd
+        description: "Nợ TKHD"
+      - name: Co_TkHd
+        description: "Có TKHD"
+      - name: Inactive
+        description: "Trạng thái hoạt động"
+
+  - name: d_kmp
+    description: "Thông tin khoản mục phí/khuyến mại gộp nguồn"
+    columns:
+      - name: Ma_KMP
+        description: "Mã KMP"
+        tests:
+          - unique
+          - not_null
+      - name: ID
+        description: "ID ở nguồn được chọn sau khi dedup"
+      - name: ID_Dv
+        description: "ID đơn vị"
+      - name: Ma_So
+        description: "Mã số"
+      - name: Ten_KMP
+        description: "Tên KMP"
+      - name: Ten_KMPE
+        description: "Tên KMP (in hoa không dấu)"
+      - name: Ten_Tat
+        description: "Tên viết tắt"
+      - name: D_v
+        description: "Đơn vị"
+      - name: ID_Nhom
+        description: "ID nhóm"
+      - name: ID_Loai
+        description: "ID loại"
+      - name: No_Tk
+        description: "Nợ tài khoản"
+      - name: Co_Tk
+        description: "Có tài khoản"
+      - name: Tk_Dt
+        description: "Tài khoản doanh thu"
+      - name: Tk_Ck
+        description: "Tài khoản chiết khấu"
+      - name: Tk_Tl
+        description: "Tài khoản trả lại"
+      - name: Thue
+        description: "Thuế"
+      - name: ListMaCt
+        description: "Danh sách mã chứng từ"
+      - name: Ghi_Chu
+        description: "Ghi chú"
+      - name: Inactive
+        description: "Trạng thái hoạt động"
+
+  - name: d_kmp_1
+    description: "Thông tin khoản mục phí/khuyến mại theo từng nguồn (giữ Nguon, không dedup)"
+    columns:
+      - name: Nguon
+        description: "Nguồn dữ liệu (code trong vars.dkmp_sources)"
+        tests:
+          - not_null
+      - name: ID
+        description: "ID ở từng nguồn"
+        tests:
+          - not_null
+      - name: Ma_KMP
+        description: "Mã KMP"
+        tests:
+          - not_null
+      - name: Ma_So
+        description: "Mã số"
+      - name: Ten_KMP
+        description: "Tên KMP"
+      - name: Ten_KMPE
+        description: "Tên KMP (in hoa không dấu)"
+      - name: Ten_Tat
+        description: "Tên viết tắt"
+      - name: D_v
+        description: "Đơn vị"
+      - name: ID_Nhom
+        description: "ID nhóm"
+      - name: ID_Loai
+        description: "ID loại"
+      - name: No_Tk
+        description: "Nợ tài khoản"
+      - name: Co_Tk
+        description: "Có tài khoản"
+      - name: Tk_Dt
+        description: "Tài khoản doanh thu"
+      - name: Tk_Ck
+        description: "Tài khoản chiết khấu"
+      - name: Tk_Tl
+        description: "Tài khoản trả lại"
+      - name: Thue
+        description: "Thuế"
+      - name: ListMaCt
+        description: "Danh sách mã chứng từ"
+      - name: Ghi_Chu
+        description: "Ghi chú"
+      - name: Inactive
+        description: "Trạng thái hoạt động"
+
+  - name: d_nhan_vien
+    description: "Thông tin nhân viên"
+    columns:
+      - name: Ma_Nv
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: Ten_Nv
+        description: "Tên nhân viên"
+      - name: Ten_NvE
+        description: "Tên nhân viên (in hoa không dấu)"
+      - name: Dia_Chi
+        description: "Địa chỉ nhân viên"
+      - name: Dien_thoai
+        description: "Điện thoại nhân viên"
+      - name: Noi_Lam
+        description: "Nơi làm việc"
+      - name: Gioi_Tinh
+        description: "Giới tính"
+
+  - name: d_nhan_vien_1
+    description: "Thông tin nhân viên theo từng nguồn"
+    columns:
+      - name: Nguon
+        description: "Nguồn dữ liệu"
+        tests:
+          - not_null
+      - name: ID
+        description: "ID nhân viên ở từng nguồn"
+        tests:
+          - not_null
+      - name: Ma_Nv
+        description: "Mã nhân viên"
+        tests:
+          - not_null
+      - name: Ten_Nv
+        description: "Tên nhân viên"
+      - name: Ten_NvE
+        description: "Tên nhân viên (in hoa không dấu)"
+      - name: Dia_Chi
+        description: "Địa chỉ nhân viên"
+      - name: Dien_Thoai
+        description: "Điện thoại nhân viên"
+      - name: Noi_Lam
+        description: "Nơi làm việc"
+      - name: Gioi_Tinh
+        description: "Giới tính"
+      - name: UpdateTime
+        description: "Thời điểm cập nhật" 
+
+  - name: d_nhan_su
+    description: "snapshot nhân sự theo tháng"
+
+  - name: d_nhan_su_2
+    description: "snapshot nhân sự theo tháng v2"
+
+  - name: d_nhom_ma_mau
+    description: "full load D_Nhom_Ma_Mau từ DmNMM"
+    columns:
+      - name: ID
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+
+  - name: d_nganh
+    description: "Thông tin ngành hàng"
+    columns:
+      - name: ID
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: Ten_Nganh
+        description: "Tên ngành hàng"
+      - name: Ma_Nganh
+        description: "Mã ngành hàng"
+      - name: Ten_NganhE
+        description: "Tên ngành hàng (in hoa không dấu)"
+
+  - name: d_nhom
+    description: "Thông tin nhóm hàng"
+    columns:
+      - name: ID
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: Ten_Nhom
+        description: "Tên nhóm hàng"
+      - name: Ma_Nhom
+        description: "Mã nhóm hàng"
+      - name: Ten_NhomE
+        description: "Tên nhóm hàng (in hoa không dấu)"
+      - name: ID_NhomMe
+        description: "ID nhóm mẹ"
+      - name: Cap_Nhom
+        description: "Cấp nhóm"
+      - name: SubID
+        description: "Sub_ID nhóm hàng"
+      - name: SoTT
+        description: "Số thứ tự"
+  
+  - name: d_dvt
+    description: "Thông tin Đơn vị tính"
+    columns:
+      - name: ID
+        description: "ID đơn vị tính"
+        tests:
+          - unique
+          - not_null
+      - name: Ma_Dvt
+        description: "Mã đơn vị tính"
+      - name: Ten_Dvt
+        description: "Tên đơn vị tính"
+      - name: Ghi_Chu
+        description: "Ghi chú đơn vị tính"
+
+  - name: d_doi_tac_1
+    description: "Thông tin đối tác theo nguồn"
+    columns:
+      - name: Ma_Dt
+        description: "Mã đối tác"
+      - name: Nguon
+        description: "Nguồn dữ liệu"
+      - name: Ten_Dt
+        description: "Tên đối tác"
+      - name: ID
+        description: "ID đối tác"
+      - name: Dia_Chi
+        description: "Địa chỉ đối tác"
+      - name: Dien_Thoai
+        description: "Điện thoại đối tác"
+      - name: Ngay_Sinh
+        description: "Ngày sinh đối tác"
+      - name: So_CMT
+        description: "Số CMT đối tác"
+      - name: Tinh
+        description: "Tỉnh đối tác"
+      - name: Quan
+        description: "Quận đối tác"
+      - name: Phuong
+        description: "Phường đối tác"
+
+  - name: d_doi_tac
+    description: "Thông tin đối tác - gộp nguồn"
+    columns:
+      - name: Ma_Dt 
+        description: "Mã đối tác"
+        tests:
+          - unique
+          - not_null
+      - name: Nguon
+        description: "Nguồn dữ liệu"
+      - name: Ten_Dt
+        description: "Tên đối tác"
+      - name: ID
+        description: "ID đối tác"
+      - name: Dia_Chi
+        description: "Địa chỉ đối tác"
+      - name: Dien_Thoai
+        description: "Điện thoại đối tác"
+      - name: Ngay_Sinh
+        description: "Ngày sinh đối tác"
+      - name: So_CMT
+        description: "Số CMT đối tác"
+      - name: Tinh
+        description: "Tỉnh đối tác"
+      - name: Quan
+        description: "Quận đối tác"
+      - name: Phuong
+        description: "Phường đối tác"
+
+  - name: d_dim_khach_hang
+    description: "incremental dim khách hàng từ stg_khach_hang (STG_221)"
+
+  - name: d_hang
+    description: "dimension for item"
+    columns:
+      - name: ID
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: ID_Nhom
+        description: "ID nhóm hàng"
+      - name: ID_Dai_Chi
+        description: "ID dải chỉ"
+      - name: Ten_Dai_Chi
+        description: "Tên dải chỉ"
+      - name: Dai_Chi
+        description: "Dải chỉ"
+      - name: Ma_Vach
+        description: "Mã vạch"
+      - name: Ma_Hang
+        description: "Mã hàng"
+      - name: Ma_Nhom
+        description: "Mã nhóm hàng"
+      - name: Ma_Nhom_Lon
+        description: "Mã nhóm lớn"
+      - name: Ten_Hang
+        description: "Tên hàng"
+      - name: Ten_HangNoD
+        description: "Tên hàng New"
+      - name: Ten_hang_in_tren_tem
+        description: "Tên hàng in trên tem"
+      - name: Gioi_Tinh
+        description: "Giới tính"
+      - name: Ham_Luong
+        description: "Hàm lượng"
+      - name: Ghi_chu1
+        description: "Ghi chú 1"
+      - name: Ghi_chu2
+        description: "Ghi chú 2"
+      - name: ID_NMM
+        description: "ID nhóm mã mẫu"
+      - name: ID_Dvt
+        description: "ID đơn vị tính"
+      - name: Chat_Lieu
+        description: "Chất liệu"
+      - name: ID_Nganh
+        description: "ID ngành hàng"
+      - name: ID_Sx
+        description: "ID sản xuất"
+      - name: So_Seri
+        description: "Số seri"
+      - name: Tk_Hh
+        description: "Tài khoản hàng hoá (từ source dmh.Tk_Hh)"
+      - name: T_Luong
+        description: "Trọng lượng"
+      - name: The_Tich
+        description: "Thể tích"
+      - name: Tong_TL
+        description: "Tổng trọng lượng"
+      - name: Ten_in_hoa_don
+        description: "Tên in hóa đơn"
+      - name: Ty_gia_NT_mua
+        description: "Tỷ giá ngoại tệ mua"
+      - name: ID_DtH
+        description: "ID đối tác hàng"
+      - name: ID_VBTG
+        description: "ID tỷ giá VBTG"
+      - name: dong_san_pham
+        description: "Dòng sản phẩm"
+
+  - name: d_hang_1
+    description: "dimension multi region"
+    columns:
+      - name: ID_Key
+        description: "Technical primary key (Ma_vung|ID)"
+        tests:
+          - unique
+          - not_null
+      - name: Ma_vung
+        description: "Mã vùng / nguồn (NY, SX, SG, ...)"
+        tests:
+          - not_null
+      - name: ID
+        description: "ID hàng (gốc theo từng nguồn)"
+        tests:
+          - not_null
+      - name: ID_Nhom
+        description: "ID nhóm hàng"
+      - name: ID_Dai_Chi
+        description: "ID dải chỉ"
+      - name: Ten_Dai_Chi
+        description: "Tên dải chỉ"
+      - name: Dai_Chi
+        description: "Dải chỉ"
+      - name: Ma_Vach
+        description: "Mã vạch"
+      - name: Ma_Hang
+        description: "Mã hàng"
+      - name: Ma_Nhom
+        description: "Mã nhóm hàng"
+      - name: Ma_Nhom_Lon
+        description: "Mã nhóm lớn"
+      - name: Ten_Hang
+        description: "Tên hàng"
+      - name: Ten_HangNoD
+        description: "Tên hàng New"
+      - name: Ten_hang_in_tren_tem
+        description: "Tên hàng in trên tem"
+      - name: Gioi_Tinh
+        description: "Giới tính"
+      - name: Ham_Luong
+        description: "Hàm lượng"
+      - name: Ghi_chu1
+        description: "Ghi chú 1"
+      - name: Ghi_chu2
+        description: "Ghi chú 2"
+      - name: ID_NMM
+        description: "ID nhóm mã mẫu"
+      - name: ID_Dvt
+        description: "ID đơn vị tính"
+      - name: Chat_Lieu
+        description: "Chất liệu"
+      - name: ID_Nganh
+        description: "ID ngành hàng"
+      - name: ID_Sx
+        description: "ID sản xuất"
+      - name: So_Seri
+        description: "Số seri"
+      - name: Tk_Hh
+        description: "Tài khoản hàng hoá (từ source dmh.Tk_Hh)"
+      - name: T_Luong
+        description: "Trọng lượng"
+      - name: The_Tich
+        description: "Thể tích"
+      - name: Tong_TL
+        description: "Tổng trọng lượng"
+      - name: Ten_in_hoa_don
+        description: "Tên in hóa đơn"
+      - name: Ty_gia_NT_mua
+        description: "Tỷ giá ngoại tệ mua"
+      - name: ID_DtH
+        description: "ID đối tác hàng"
+      - name: ID_VBTG
+        description: "ID tỷ giá VBTG"
+      - name: dong_san_pham
+        description: "Dòng sản phẩm"
+
+  - name: d_ma_mau_new
+    description: "danh mục mã mẫu phân loại mới theo mã mẫu"
+    columns:
+      - name: MA_MAU
+        tests:
+          - unique
+          - not_null
+      - name: PRODUCT_SEGMENT_NEW
+      - name: PRODUCT_LINE_NEW
+      - name: PRODUCT_CATEGORY_NEW
+      - name: JEWELRY_TYPE_NEW
+      - name: MATERIAL_NEW
+      - name: CLASSIFICATION_METHOD
+      - name: CAN_XEM_XET
+      - name: LY_DO_XEM_XET
+
+  - name: d_hang_new
+    description: "danh mục hàng theo phân loại mới"
+    columns:
+      - name: ID_HANG
+        tests:
+          - unique
+          - not_null
+      - name: MA_HANG
+        tests:
+          - not_null
+      - name: MA_MAU
+      - name: PRODUCT_SEGMENT_NEW
+      - name: PRODUCT_LINE_NEW
+      - name: PRODUCT_CATEGORY_NEW
+      - name: CAN_XEM_XET
+      - name: LY_DO_XEM_XET

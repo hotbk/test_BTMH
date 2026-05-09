@@ -1,0 +1,113 @@
+﻿version: 2
+
+models:
+
+  - name: r_so_du_ton_kho
+    description: "Số dư tồn kho theo ngày, công ty và SKU"
+    columns:
+      - name: ngay
+        description: "Ngày tồn kho"
+      - name: nguon
+        description: "Nguồn dữ liệu / công ty"
+      - name: ma_kho
+        description: "Mã kho"
+      - name: Nganh_hang
+        description: "Ngành hàng"
+      - name: nhom_sp_nho
+        description: "Nhóm sản phẩm nhỏ"
+      - name: Ten_Hang
+        description: "Tên hàng hóa"
+      - name: Ma_Hang
+        description: "Mã hàng hóa"
+      - name: T_Luong
+        description: "Trọng lượng"
+      - name: Tk_Hh
+        description: "Tài khoản hàng hóa"
+      - name: ton_dau_ngay_sl
+        description: "Tồn đầu ngày (số lượng)"
+      - name: ton_cuoi_ngay_sl
+        description: "Tồn cuối ngày (số lượng)"
+      - name: ton_dau_ngay_gt
+        description: "Tồn đầu ngày (giá trị)"
+      - name: ton_cuoi_ngay_gt
+        description: "Tồn cuối ngày (giá trị)"
+      - name: so_luong_nhap
+        description: "Số lượng nhập"
+      - name: gia_tri_nhap
+        description: "Giá trị nhập"
+      - name: so_luong_xuat
+        description: "Số lượng xuất"
+      - name: gia_tri_xuat
+        description: "Giá trị xuất"
+      - name: so_luong_chuyen
+        description: "Số lượng điều chuyển"
+      - name: gia_tri_chuyen
+        description: "Giá trị điều chuyển"
+      - name: so_luong_ban_today
+        description: "Số lượng bán trong ngày"
+      - name: doanh_thu_today
+        description: "Doanh thu trong ngày"
+      - name: gia_von_today
+        description: "Giá vốn trong ngày"
+      - name: so_luong_ban_yesterday
+        description: "Số lượng bán trong ngày hôm qua"
+      - name: so_luong_ban_3d
+        description: "Số lượng bán trong 3 ngày gần nhất"
+      - name: so_luong_ban_7d
+        description: "Số lượng bán trong 7 ngày gần nhất"
+
+  - name: v_so_du_ton_kho_2
+    description: "Số dư tồn kho theo ngày, công ty và SKU"
+    columns:
+      - name: ngay
+        description: "Ngày tồn kho"
+      - name: nguon
+        description: "Nguồn dữ liệu / công ty"
+      - name: ma_kho
+        description: "Mã kho"
+      - name: Nganh_hang
+        description: "Ngành hàng"
+      - name: nhom_sp_nho
+        description: "Nhóm sản phẩm nhỏ"
+      - name: Ten_Hang
+        description: "Tên hàng hóa"
+      - name: Ma_Hang
+        description: "Mã hàng hóa"
+      - name: T_Luong
+        description: "Trọng lượng"
+      - name: Tk_Hh
+        description: "Tài khoản hàng hóa"
+      - name: ton_dau_ngay_sl
+        description: "Tồn đầu ngày (số lượng)"
+      - name: ton_cuoi_ngay_sl
+        description: "Tồn cuối ngày (số lượng)"
+      - name: ton_dau_ngay_gt
+        description: "Tồn đầu ngày (giá trị)"
+      - name: ton_cuoi_ngay_gt
+        description: "Tồn cuối ngày (giá trị)"
+      - name: so_luong_nhap
+        description: "Số lượng nhập"
+      - name: gia_tri_nhap
+        description: "Giá trị nhập"
+      - name: so_luong_xuat
+        description: "Số lượng xuất"
+      - name: gia_tri_xuat
+        description: "Giá trị xuất"
+      - name: so_luong_chuyen
+        description: "Số lượng điều chuyển"
+      - name: gia_tri_chuyen
+        description: "Giá trị điều chuyển"
+      - name: so_luong_ban_today
+        description: "Số lượng bán trong ngày"
+      - name: doanh_thu_today
+        description: "Doanh thu trong ngày"
+      - name: gia_von_today
+        description: "Giá vốn trong ngày"
+      - name: so_luong_ban_yesterday
+        description: "Số lượng bán trong ngày hôm qua"
+      - name: so_luong_ban_3d
+        description: "Số lượng bán trong 3 ngày gần nhất"
+      - name: so_luong_ban_7d
+        description: "Số lượng bán trong 7 ngày gần nhất"
+
+

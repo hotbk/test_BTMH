@@ -1,0 +1,199 @@
+﻿version: 2
+
+models:
+
+  - name: v_invesment_gold_sales
+    description: "Doanh thu vàng tích lũy theo cửa hàng và SKU"
+    columns:
+      - name: Unique_Store_ID
+        description: "Kho cụ thể, ghép từ mã kho và công ty"
+      - name: Order_ID
+        description: "Mã đơn hàng (ghép từ công ty và ID_Phieu_Thu)"
+      - name: Company_ID
+        description: "Mã công ty"
+      - name: Store_ID
+        description: "Mã kho"
+      - name: ID_hang
+        description: "ID nội bộ của hàng hóa"
+      - name: Date
+        description: "Ngày bán hàng"
+      - name: SKU_ID
+        description: "Mã hàng hóa"
+      - name: Customer_ID
+        description: "Mã khách hàng"
+      - name: Sold_Qty
+        description: "Số lượng bán theo đơn vị tính"
+
+  - name: v_jewelry_sales
+    description: "Doanh thu vàng trang sức theo cửa hàng và SKU"
+    columns:
+      - name: Unique_Store_ID
+        description: "Kho cụ thể, ghép từ mã kho và công ty"
+      - name: Order_ID
+        description: "Mã đơn hàng (ghép từ công ty và ID_Phieu_Thu)"
+      - name: Company_ID
+        description: "Mã công ty"
+      - name: Store_ID
+        description: "Mã kho"
+      - name: ID_hang
+        description: "ID nội bộ của hàng hóa"
+      - name: Date
+        description: "Ngày bán hàng"
+      - name: SKU_ID
+        description: "Mã hàng hóa"
+      - name: Customer_ID
+        description: "Mã khách hàng"
+      - name: Sold_Qty
+        description: "Số lượng bán theo đơn vị tính"
+
+  - name: v_gold_deposit
+    description: "Tổng hợp số lượng nợ cọc theo cửa hàng và SKU"
+    columns:
+      - name: Unique_Store_ID
+        description: "Kho cụ thể, ghép từ mã kho và nguồn dữ liệu"
+      - name: Deposit_ID
+        description: "ID bản ghi đặt cọc (ghép từ nguồn và ID)"
+      - name: Nguon
+        description: "Nguồn dữ liệu / công ty"
+      - name: Ma_Kho
+        description: "Mã kho"
+      - name: ID_hang
+        description: "ID nội bộ của hàng hóa"
+      - name: SKU_ID
+        description: "Mã hàng hóa"
+      - name: Due_Date
+        description: "Ngày hẹn trả cọc"
+      - name: Customer_ID
+        description: "Mã khách hàng"
+      - name: Required_Qty
+        description: "Số lượng bản vị cần trả cọc"
+
+  - name: v_stock_history
+    description: "Lịch sử tồn kho theo ngày, công ty và SKU"
+    columns:
+      - name: ngay
+        description: "Ngày tồn kho"
+      - name: nguon
+        description: "Nguồn dữ liệu / công ty"
+      - name: ma_kho
+        description: "Mã kho"
+      - name: Nganh_hang
+        description: "Ngành hàng"
+      - name: nhom_sp_nho
+        description: "Nhóm sản phẩm nhỏ"
+      - name: Ten_Hang
+        description: "Tên hàng hóa"
+      - name: Ma_Hang
+        description: "Mã hàng hóa"
+      - name: T_Luong
+        description: "Trọng lượng"
+      - name: Tk_Hh
+        description: "Tài khoản hàng hóa"
+      - name: ton_dau_ngay_sl
+        description: "Tồn đầu ngày (số lượng)"
+      - name: ton_cuoi_ngay_sl
+        description: "Tồn cuối ngày (số lượng)"
+      - name: ton_dau_ngay_gt
+        description: "Tồn đầu ngày (giá trị)"
+      - name: ton_cuoi_ngay_gt
+        description: "Tồn cuối ngày (giá trị)"
+      - name: So_luong_nhap
+        description: "Số lượng nhập"
+      - name: Gia_tri_nhap
+        description: "Giá trị nhập"
+      - name: So_luong_xuat
+        description: "Số lượng xuất"
+      - name: Gia_tri_xuat
+        description: "Giá trị xuất"
+      - name: So_luong_chuyen
+        description: "Số lượng điều chuyển"
+      - name: Gia_tri_chuyen
+        description: "Giá trị điều chuyển"
+
+  - name: v_stock_current
+    description: "Tồn kho hiện tại theo ngày, công ty và SKU"
+    columns:
+      - name: ngay
+        description: "Ngày tồn kho"
+      - name: nguon
+        description: "Nguồn dữ liệu / công ty"
+      - name: ma_kho
+        description: "Mã kho"
+      - name: Nganh_hang
+        description: "Ngành hàng"
+      - name: nhom_sp_nho
+        description: "Nhóm sản phẩm nhỏ"
+      - name: Ten_Hang
+        description: "Tên hàng hóa"
+      - name: Ma_Hang
+        description: "Mã hàng hóa"
+      - name: T_Luong
+        description: "Trọng lượng"
+      - name: Tk_Hh
+        description: "Tài khoản hàng hóa"
+      - name: ton_dau_ngay_sl
+        description: "Tồn đầu ngày (số lượng)"
+      - name: ton_cuoi_ngay_sl
+        description: "Tồn cuối ngày (số lượng)"
+      - name: ton_dau_ngay_gt
+        description: "Tồn đầu ngày (giá trị)"
+      - name: ton_cuoi_ngay_gt
+        description: "Tồn cuối ngày (giá trị)"
+      - name: So_luong_nhap
+        description: "Số lượng nhập"
+      - name: Gia_tri_nhap
+        description: "Giá trị nhập"
+      - name: So_luong_xuat
+        description: "Số lượng xuất"
+      - name: Gia_tri_xuat
+        description: "Giá trị xuất"
+      - name: So_luong_chuyen
+        description: "Số lượng điều chuyển"
+      - name: Gia_tri_chuyen
+        description: "Giá trị điều chuyển"
+
+  - name: v_stock_vendors
+    description: "Đối tượng cung cấp hàng"
+    columns:
+      - name: Ma_Hang
+        description: "Mã hàng hóa"
+      - name: Ma_Dt
+        description: "Mã đối tượng"
+      - name: Ten_Dt
+        description: "Tên đối tượng"
+
+  - name: v_transfer
+    description: "Số lượng/giá trị điều chuyển theo ngày, kho và SKU"
+    columns:
+      - name: ngay
+        description: "Ngày hạch toán"
+      - name: nguon
+        description: "Nguồn dữ liệu / công ty"
+      - name: Ma_Kho
+        description: "Mã kho (kho xuất/kho nhận)"
+      - name: id_hang
+        description: "ID hàng hóa"
+      - name: so_luong_chuyen
+        description: "Số lượng điều chuyển"
+      - name: gia_tri_chuyen
+        description: "Giá trị điều chuyển"
+
+  - name: v_import_export
+    description: "Tổng hợp nhập/xuất theo ngày, kho và SKU"
+    columns:
+      - name: ngay
+        description: "Ngày hạch toán"
+      - name: nguon
+        description: "Nguồn dữ liệu / công ty"
+      - name: ma_kho
+        description: "Mã kho"
+      - name: id_hang
+        description: "ID hàng hóa"
+      - name: so_luong_nhap
+        description: "Số lượng nhập"
+      - name: so_luong_xuat
+        description: "Số lượng xuất"
+      - name: gia_tri_nhap
+        description: "Giá trị nhập"
+      - name: gia_tri_xuat
+        description: "Giá trị xuất"

@@ -22,3 +22,4 @@ google-cloud-storage
 pyarrow
 SQLAlchemy
 pyodbc
+google-cloud-bigquery

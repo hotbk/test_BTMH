@@ -1,0 +1,42 @@
+with base as(
+  select concat(Ma_Kho,"-",Ma_Cong_ty) as Unique_Store_ID
+        ,concat(Ma_Cong_ty,"-",ID_Phieu_Thu) as Order_ID
+        ,Ma_Cong_ty as Company_ID
+        ,Ma_Kho as Store_ID
+        ,ID_hang
+        ,date(Ngay_PhieuThu) as Date
+        ,h.Ma_Hang as SKU_ID
+        ,Ma_Dt as Customer_ID
+        ,sum(dt.So_Luong) as Sold_Qty
+  from {{ ref('f_doanh_thu') }} dt left join {{ ref('d_hang_agg') }} h on dt.ID_Hang = h.ID
+  where 1=1
+  and ID_Dv >= 0
+  and Ma_dong is null
+  and Nganhhang_fix = 'Vàng tích lũy'
+  and Ngay_PhieuThu >= '2024-01-01'
+  {# and Ngay_PhieuThu >= date_sub({{ btmh_run_date() }}, interval 15 day) #}
+  group by 1,2,3,4,5,6,7,8
+
+  union all
+
+    select concat(Ma_Kho,"-","NY") as Unique_Store_ID
+        ,concat("B2B","-",ID_Phieu_Ban) as Order_ID
+        ,'NY' as Company_ID
+        ,Ma_Kho as Store_ID
+        ,ID_hang
+        ,date(Ngay_Chung_Tu) as Date
+        ,h.Ma_Hang as SKU_ID
+        ,Ma_Khach_Hang as Customer_ID
+        ,sum(dt.So_Luong) as Sold_Qty
+  from {{ ref('f_b2b') }} dt left join {{ ref('d_hang_agg') }} h on dt.ID_Hang = h.ID
+  where 1=1
+  and Ma_Kho = 'B2BBL'
+  and Nganhhang_fix = 'Vàng tích lũy'
+  and Ngay_Chung_Tu >= '2024-01-01'
+  {# and Ngay_Chung_Tu >= date_sub({{ btmh_run_date() }}, interval 15 day) #}
+  group by 1,2,3,4,5,6,7,8
+)
+
+select *
+from base
+where 1=1

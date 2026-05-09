@@ -1,0 +1,651 @@
+﻿version: 2
+
+models:
+  - name: r_bc_kinh_doanh
+    description: "Báo cáo kinh doanh tổng hợp"
+    columns:
+      - name: date
+        description: "Ngày báo cáo"
+
+      - name: channel
+        description: "Kênh bán hàng"
+      - name: store_code
+        description: "Mã kho/cửa hàng"
+      - name: Nganh_hang
+        description: "Ngành hàng"
+      - name: luot_khach_giao
+        description: "Số lượt khách giao"
+      - name: so_hoa_don_giao
+        description: "Số hóa đơn giao"
+      - name: t_luong_ban_ngay
+        description: "Trọng lượng bán ngay"
+      - name: t_luong_khach_dat
+        description: "Trọng lượng khách đặt"
+      - name: t_luong_tra_coc
+        description: "Trọng lượng trả cọc"
+      - name: so_luong_ban_ngay
+        description: "Số lượng bán ngay"
+      - name: so_luong_khach_dat
+        description: "Số lượng khách đặt"
+      - name: so_luong_tra_coc
+        description: "Số lượng trả cọc"
+      - name: tien_dat
+        description: "Tiền đặt cọc"
+      - name: tien_ban_ngay
+        description: "Tiền bán ngay"
+      - name: tien_tra_coc
+        description: "Tiền trả cọc"
+      - name: t_luong_ds
+        description: "Tổng trọng lượng doanh số"
+      - name: t_luong_dt
+        description: "Tổng trọng lượng doanh thu"
+      - name: so_luong_ds
+        description: "Tổng số lượng doanh số"
+      - name: so_luong_dt
+        description: "Tổng số lượng doanh thu"
+      - name: doanh_so
+        description: "Doanh số tổng"
+      - name: doanh_thu
+        description: "Doanh thu tổng"
+
+  - name: r_doanh_so
+    description: "Mart đơn hàng và doanh thu bán hàng"
+    columns:
+      - name: order_id
+        description: "Mã đơn hàng"
+      - name: order_line_id
+        description: "Mã dòng đơn hàng"
+      - name: item_id
+        description: "ID hàng"
+      - name: item_code
+        description: "Mã hàng hóa"
+      - name: item_name
+        description: "Tên hàng hóa"
+      - name: ma_nhom
+        description: "Nhóm hàng"
+      - name: created_date
+        description: "Ngày tạo bản ghi"
+      - name: created_time
+        description: "Thời điểm tạo bản ghi"
+      - name: expected_date
+        description: "Ngày dự kiến"
+      - name: bill_date
+        description: "Ngày hoá đơn"
+      - name: bill_id
+        description: "Mã hoá đơn"
+      - name: customer_id
+        description: "Mã khách hàng"
+      - name: company_code
+        description: "Mã công ty"
+      - name: warehouse_id
+        description: "Mã kho"
+      - name: shop_code
+        description: "Mã cửa hàng"
+      - name: quantity_by_unit
+        description: "Số lượng theo đơn vị tính"
+      - name: quantity
+        description: "Số lượng quy đổi"
+      - name: line_income
+        description: "Doanh thu dòng"
+      - name: est_cogs
+        description: "Giá vốn ước tính"
+      - name: cogs_per_unit
+        description: "Giá vốn trên đơn vị"
+      - name: est_gross_profit
+        description: "Lợi nhuận gộp ước tính"
+      - name: type
+        description: "Loại đơn hàng"
+
+  - name: r_doanh_thu
+    description: "Tổng hợp doanh thu bán hàng"
+    columns:
+      - name: Ngay_PhieuThu
+        description: "Ngày phiếu thu"
+      - name: Ma_Cong_Ty
+        description: "Mã công ty"
+      - name: ID_Phieu_thu
+        description: "Mã phiếu thu"
+      - name: InsertDate
+        description: "Ngày chèn bản ghi"
+      - name: Ma_KH
+        description: "Mã khách hàng"
+      - name: ID_Hang
+        description: "ID hàng"
+      - name: Sub_ID
+        description: "Mã phụ của đơn cọc"
+      - name: Ma_Kho
+        description: "Mã kho"
+      - name: So_Luong
+        description: "Số lượng theo đơn vị tính"
+      - name: SL_Chi_TT
+        description: "Số lượng chỉ thực tế"
+      - name: Gia_Von
+        description: "Giá vốn"
+      - name: Tien_PhieuThu1
+        description: "Doanh thu thực tế"
+
+  - name: r_domestic_premium
+    description: "Báo cáo phí bảo hiểm nội địa và tỷ giá quy đổi"
+    columns:
+      - name: ngay
+        description: "Ngày"
+      - name: xau
+        description: "Giá vàng"
+      - name: usd
+        description: "Tỷ giá USD"
+      - name: xaud_quy_doi
+        description: "Tỷ giá vàng quy đổi"
+      - name: Gia_Mua_Trung_Binh
+        description: "Giá mua trung bình"
+      - name: dp
+        description: "Độ chênh đổi"
+      - name: percentile_all_time
+        description: "Phần trăm phân vị toàn thời gian"
+      - name: percentile_12m
+        description: "Phần trăm phân vị 12 tháng"
+
+  - name: r_exchange_rate
+    description: "Tỷ giá từ nguồn stg_ggs.vtt_exchange_rate"
+
+  - name: r_gm_target
+    description: "Target GM theo ngày"
+    columns:
+      - name: date
+        description: "Ngày"
+      - name: gm_target
+        description: "Target gross margin"
+      - name: gm_floor
+        description: "Floor gross margin"
+
+  - name: r_kcs_detail_loi
+    description: "Chi tiết lỗi KCS"
+    columns:
+      - name: report_date
+        description: "Ngày báo cáo"
+
+      - name: nguon
+        description: "Nguồn dữ liệu"
+      - name: ma_loi
+        description: "Mã lỗi"
+
+  - name: r_mkt_1
+    description: "Báo cáo R_MKT_1"
+    columns:
+      - name: Ngay
+        description: "Ngày ghi nhận"
+      - name: MA CONG TY
+        description: "Mã công ty"
+      - name: ID
+        description: "ID bản ghi"
+      - name: ID PT
+        description: "ID phiếu thu"
+      - name: MA HANG
+        description: "Mã hàng"
+      - name: MA MAU
+        description: "Mã màu"
+      - name: MO TA MA MAU
+        description: "Mô tả mã màu"
+      - name: ANH MA MAU
+        description: "Ảnh mã màu"
+      - name: KENH BAN
+        description: "Kênh bán"
+      - name: NHOM HANG
+        description: "Nhóm hàng"
+      - name: BO SUU TAP
+        description: "Bộ sưu tập"
+      - name: CHUNG LOAI
+        description: "Chủng loại"
+      - name: DANH MUC SAN PHAM
+        description: "Danh mục sản phẩm"
+      - name: HOA TIET MAT
+        description: "Hoa tiết mặt"
+      - name: GIOI TINH SAN PHAM
+        description: "Giới tính sản phẩm"
+      - name: TEN DA CHU
+        description: "Tên đá chủ"
+      - name: LOAI DA
+        description: "Loại đá"
+      - name: HAM LUONG KIM LOAI
+        description: "Hàm lượng kim loại"
+      - name: NGAY TAO MA MAU
+        description: "Ngày tạo mã màu"
+      - name: DOANH THU THUAN
+        description: "Doanh thu thuần"
+      - name: TONG TIEN VON
+        description: "Tổng giá vốn"
+      - name: LOI NHUAN GOP
+        description: "Lợi nhuận gộp"
+      - name: SO LUONG BAN
+        description: "Số lượng bán"
+      - name: SO LUONG CHI
+        description: "Số lượng chỉ"
+      - name: SO LUONG NHAP
+        description: "Số lượng nhập"
+      - name: SO LUONG KHACH MUA
+        description: "Số lượng khách mua"
+      - name: SO LUONG TON KHO
+        description: "Số lượng tồn kho"
+      - name: SO LUONG DON HANG
+        description: "Số lượng đơn hàng"
+      - name: SO LUONG MUA LAI
+        description: "Số lượng mua lại"
+      - name: UpdateTime
+        description: "Thời điểm cập nhật"
+
+  - name: r_nhap_lai
+    description: "Báo cáo nhập lại"
+    columns:
+      - name: Ngay
+        description: "Ngày"
+      - name: Nguon
+        description: "Nguồn dữ liệu"
+      - name: Ma_Kho
+        description: "Mã kho"
+      - name: ID_Hang
+        description: "ID hàng"
+      - name: Nganh_hang
+        description: "Ngành hàng"
+      - name: Dong_Sp
+        description: "Dòng sản phẩm"
+      - name: Ten_Hang
+        description: "Tên hàng"
+      - name: quantity_by_unit
+        description: "Số lượng theo đơn vị tính"
+      - name: quantity
+        description: "Số lượng quy đổi"
+      - name: line_income
+        description: "Doanh thu dòng"
+
+  - name: r_nhap_mua_tt
+    description: "Báo cáo nhập mua trả tiền"
+    columns:
+      - name: Ngay
+        description: "Ngày"
+      - name: ID
+        description: "ID hàng hóa"
+      - name: Ma_Ct
+        description: "Mã chứng từ"
+      - name: quantity
+        description: "Số lượng"
+
+  - name: r_rnd_1
+    description: "Report R_RND_1"
+    columns:
+      - name: Ngay
+        description: "Ngày"
+      - name: MA_CONG_TY
+        description: "Mã công ty"
+      - name: KENH_BAN
+        description: "Kênh bán"
+      - name: NHOM_HANG
+        description: "Nhóm hàng"
+      - name: MA_MAU
+        description: "Mã màu"
+      - name: MO_TA_MA_MAU
+        description: "Mô tả mã màu"
+      - name: BO_SUU_TAP
+        description: "Bộ sưu tập"
+      - name: CHUNG_LOAI
+        description: "Chủng loại"
+      - name: DANH_MUC_SAN_PHAM
+        description: "Danh mục sản phẩm"
+      - name: HOA_TIET_MAT
+        description: "Hoa tiết mặt"
+      - name: GIOI_TINH_SAN_PHAM
+        description: "Giới tính sản phẩm"
+      - name: TEN_DA_CHU
+        description: "Tên đá chủ"
+      - name: LOAI_DA
+        description: "Loại đá"
+      - name: HAM_LUONG_KIM_LOAI
+        description: "Hàm lượng kim loại"
+      - name: SO_LUONG_BAN
+        description: "Số lượng bán"
+      - name: SO_LUONG_CHI
+        description: "Số lượng chỉ"
+      - name: SO_LUONG_NHAP
+        description: "Số lượng nhập"
+      - name: SO_LUONG_KHACH_MUA
+        description: "Số lượng khách mua"
+      - name: SO_LUONG_TON_KHO
+        description: "Số lượng tồn kho"
+      - name: SO_LUONG_DON_HANG
+        description: "Số lượng đơn hàng"
+      - name: SO_LUONG_MUA_LAI
+        description: "Số lượng mua lại"
+
+  - name: r_rnd_2
+    description: "Report R_RND_2"
+    columns:
+      - name: NGAY
+        description: "Ngày"
+      - name: MA_CONG_TY
+        description: "Mã công ty"
+      - name: MA CONG TY
+        description: "Mã công ty"
+      - name: ID
+        description: "ID"
+      - name: ID PT
+        description: "ID phiếu thu"
+      - name: MA HANG
+        description: "Mã hàng"
+      - name: MA MAU
+        description: "Mã màu"
+      - name: MO TA MA MAU
+        description: "Mô tả mã màu"
+      - name: ANH MA MAU
+        description: "Ảnh mã màu"
+      - name: KENH BAN
+        description: "Kênh bán"
+      - name: NHOM HANG
+        description: "Nhóm hàng"
+      - name: BO SUU TAP
+        description: "Bộ sưu tập"
+      - name: CHUNG LOAI
+        description: "Chủng loại"
+      - name: DANH MUC SAN PHAM
+        description: "Danh mục sản phẩm"
+      - name: HOA TIET MAT
+        description: "Hoa tiết mặt"
+      - name: GIOI TINH SAN PHAM
+        description: "Giới tính sản phẩm"
+      - name: TEN DA CHU
+        description: "Tên đá chủ"
+      - name: LOAI DA
+        description: "Loại đá"
+      - name: HAM LUONG KIM LOAI
+        description: "Hàm lượng kim loại"
+      - name: TRONG LUONG VANG
+        description: "Trọng lượng vàng"
+      - name: TRONG LUONG DA CHINH
+        description: "Trọng lượng đá chính"
+      - name: TRONG LUONG DA PHU
+        description: "Trọng lượng đá phụ"
+      - name: TONG TRONG LUONG
+        description: "Tổng trọng lượng"
+      - name: MA NCC
+        description: "Mã nhà cung cấp"
+      - name: MA KH
+        description: "Mã khách hàng"
+      - name: TEN KH
+        description: "Tên khách hàng"
+      - name: GIOI TINH
+        description: "Giới tính"
+      - name: TUOI
+        description: "Tuổi"
+      - name: NGAY SINH
+        description: "Ngày sinh"
+      - name: LOAI KH
+        description: "Loại khách hàng"
+      - name: LOAI PHIEU THU
+        description: "Loại phiếu thu"
+      - name: SO LUONG
+        description: "Số lượng"
+      - name: SO LUONG CHI
+        description: "Số lượng chỉ"
+      - name: DOANH THU THUAN
+        description: "Doanh thu thuần"
+      - name: GIA VON
+        description: "Giá vốn"
+      - name: DON GIA BAN
+        description: "Đơn giá bán"
+      - name: CHIET KHAU
+        description: "Chiết khấu"
+      - name: UpdateTime
+        description: "Thời điểm cập nhật"
+
+  - name: r_rnd_3
+    description: "Report R_RND_3"
+    columns:
+      - name: MA_MAU
+        description: "Mã màu"
+      - name: MA MAU
+        description: "Mã màu"
+      - name: NHOM HANG
+        description: "Nhóm hàng"
+      - name: NGAY TAO MA MAU
+        description: "Ngày tạo mã màu"
+      - name: ANH MA MAU
+        description: "Ảnh mã màu"
+      - name: BO SUU TAP
+        description: "Bộ sưu tập"
+      - name: DANH MUC SAN PHAM
+        description: "Danh mục sản phẩm"
+      - name: CHUNG LOAI
+        description: "Chủng loại"
+      - name: GIOI TINH SAN PHAM
+        description: "Giới tính sản phẩm"
+      - name: HOA TIET MAT
+        description: "Hoa tiết mặt"
+      - name: LOAI DA
+        description: "Loại đá"
+      - name: TEN DA CHU
+        description: "Tên đá chủ"
+      - name: HAM LUONG KIM LOAI
+        description: "Hàm lượng kim loại"
+      - name: UpdateTime
+        description: "Thời điểm cập nhật"
+
+  - name: r_ton_kho_ngay
+    description: "Report tồn kho theo ngày"
+    columns:
+      - name: Nguon
+        description: "Nguồn dữ liệu"
+      - name: Ngay
+        description: "Ngày"
+      - name: Ma_Kho
+        description: "Mã kho"
+      - name: Ten_Kho
+        description: "Tên kho"
+      - name: ID_DaiChi
+        description: "ID dài chỉ"
+      - name: Ten_Dai_Chi
+        description: "Tên dài chỉ"
+      - name: Dai_Chi
+        description: "Dải chỉ"
+      - name: Nhom_hang
+        description: "Nhóm hàng"
+      - name: dong_san_pham
+        description: "Dòng sản phẩm"
+      - name: Ma_mau
+        description: "Mã màu"
+      - name: Chung_loai
+        description: "Chủng loại"
+      - name: Gioi_tinh_ma_mau
+        description: "Giới tính mã màu"
+      - name: Ham_luong_kim_loai
+        description: "Hàm lượng kim loại"
+      - name: Mau_sac
+        description: "Màu sắc"
+      - name: Sl_Ton
+        description: "Số lượng tồn kho"
+      - name: Trong_luong_ton
+        description: "Trọng lượng tồn kho"
+      - name: Tong_trong_luong_ton
+        description: "Tổng trọng lượng tồn kho"
+      - name: Sl_CC
+        description: "Số lượng cơ cấu"
+      - name: San_luong_ban_KD
+        description: "Số lượng bán không định"
+      - name: San_luong_ban
+        description: "Số lượng bán"
+      - name: Dat_Coc
+        description: "Đặt cọc tổng"
+      - name: Trong_Luong_Dat_Coc
+        description: "Trọng lượng đặt cọc"
+      - name: Dat_Coc_Tai_Ngay
+        description: "Đặt cọc tại ngày"
+      - name: Trong_Luong_Dat_Coc_Tai_Ngay
+        description: "Trọng lượng đặt cọc tại ngày"
+      - name: Dat_Coc_Tra_T
+        description: "Đặt cọc trả T"
+      - name: Dat_Coc_Tra_T1
+        description: "Đặt cọc trả T+1"
+      - name: Dat_Coc_Tra_T2
+        description: "Đặt cọc trả T+2"
+      - name: Dat_Coc_Tra_T3
+        description: "Đặt cọc trả T+3"
+      - name: Dat_Coc_Tra_T4
+        description: "Đặt cọc trả T+4"
+      - name: Dat_Coc_Tra_T5
+        description: "Đặt cọc trả T+5"
+      - name: Mua_Lai
+        description: "Mua lại"
+      - name: Trong_luong_Mua_Lai
+        description: "Trọng lượng mua lại"
+      - name: Gia_Tri
+        description: "Giá trị tồn kho"
+      - name: Dieu_Chuyen_SHP
+        description: "Điều chuyển về SHP"
+      - name: UpdateTime
+        description: "Thời điểm cập nhật"
+
+  - name: r_ton_kho_ngay_today
+    description: "Snapshot tồn kho ngày hiện tại"
+    columns:
+      - name: Nguon
+        description: "Nguồn dữ liệu"
+      - name: Ngay
+        description: "Ngày"
+      - name: Ma_Kho
+        description: "Mã kho"
+      - name: Ten_Kho
+        description: "Tên kho"
+      - name: ID_DaiChi
+        description: "ID dài chỉ"
+      - name: Ten_Dai_Chi
+        description: "Tên dài chỉ"
+      - name: Dai_Chi
+        description: "Dải chỉ"
+      - name: Nhom_hang
+        description: "Nhóm hàng"
+      - name: dong_san_pham
+        description: "Dòng sản phẩm"
+      - name: Ma_mau
+        description: "Mã màu"
+      - name: Chung_loai
+        description: "Chủng loại"
+      - name: Gioi_tinh_ma_mau
+        description: "Giới tính mã màu"
+      - name: Ham_luong_kim_loai
+        description: "Hàm lượng kim loại"
+      - name: Mau_sac
+        description: "Màu sắc"
+      - name: Sl_Ton
+        description: "Số lượng tồn kho"
+      - name: Trong_luong_ton
+        description: "Trọng lượng tồn kho"
+      - name: Tong_trong_luong_ton
+        description: "Tổng trọng lượng tồn kho"
+      - name: Sl_CC
+        description: "Số lượng cơ cấu"
+      - name: San_luong_ban_KD
+        description: "Số lượng bán không định"
+      - name: San_luong_ban
+        description: "Số lượng bán"
+      - name: Dat_Coc
+        description: "Đặt cọc tổng"
+      - name: Trong_Luong_Dat_Coc
+        description: "Trọng lượng đặt cọc"
+      - name: Dat_Coc_Tai_Ngay
+        description: "Đặt cọc tại ngày"
+      - name: Trong_Luong_Dat_Coc_Tai_Ngay
+        description: "Trọng lượng đặt cọc tại ngày"
+      - name: Dat_Coc_Tra_T
+        description: "Đặt cọc trả T"
+      - name: Dat_Coc_Tra_T1
+        description: "Đặt cọc trả T+1"
+      - name: Dat_Coc_Tra_T2
+        description: "Đặt cọc trả T+2"
+      - name: Dat_Coc_Tra_T3
+        description: "Đặt cọc trả T+3"
+      - name: Dat_Coc_Tra_T4
+        description: "Đặt cọc trả T+4"
+      - name: Dat_Coc_Tra_T5
+        description: "Đặt cọc trả T+5"
+      - name: Mua_Lai
+        description: "Mua lại"
+      - name: Trong_luong_Mua_Lai
+        description: "Trọng lượng mua lại"
+      - name: Gia_Tri
+        description: "Giá trị tồn kho"
+      - name: Dieu_Chuyen_SHP
+        description: "Điều chuyển về SHP"
+      - name: UpdateTime
+        description: "Thời điểm cập nhật"
+
+  - name: r_ton_kho_thang
+    description: "Report tồn kho theo tháng"
+    columns:
+      - name: Nguon
+        description: "Nguồn dữ liệu"
+      - name: Thang
+        description: "Tháng"
+      - name: Ngay
+        description: "Ngày ghi nhận"
+      - name: Ma_Kho
+        description: "Mã kho"
+      - name: Ten_Kho
+        description: "Tên kho"
+      - name: Ma_Hang
+        description: "Mã hàng"
+      - name: Ten_Hang
+        description: "Tên hàng"
+      - name: ID_DaiChi
+        description: "ID dài chỉ"
+      - name: Ten_Dai_Chi
+        description: "Tên dài chỉ"
+      - name: Dai_Chi
+        description: "Dải chỉ"
+      - name: Ma_NCC
+        description: "Mã nhà cung cấp"
+      - name: Danh_muc_SP
+        description: "Danh mục sản phẩm"
+      - name: Nhom_hang
+        description: "Nhóm hàng"
+      - name: Ma_mau
+        description: "Mã màu"
+      - name: Chung_loai
+        description: "Chủng loại"
+      - name: Gioi_tinh
+        description: "Giới tính"
+      - name: Ham_luong_kim_loai
+        description: "Hàm lượng kim loại"
+      - name: Mau_sac
+        description: "Màu sắc"
+      - name: Ngay_nhap
+        description: "Ngày nhập gần nhất"
+      - name: Sl_Ton
+        description: "Số lượng tồn kho"
+      - name: Sl_Ton_Dau_Ky
+        description: "Số lượng tồn kho đầu kỳ"
+      - name: Sl_Ton_Trung_Binh
+        description: "Số lượng tồn kho trung bình"
+      - name: Tong_tlg
+        description: "Tổng trọng lượng"
+      - name: TL_Vang
+        description: "Trọng lượng vàng"
+      - name: TL_Vang_ban_ra
+        description: "Trọng lượng vàng bán ra"
+      - name: Tong_tlg_Dau_Ky
+        description: "Tổng trọng lượng đầu kỳ"
+      - name: Tong_tlg_Trung_Binh
+        description: "Tổng trọng lượng trung bình"
+      - name: Sl_CC
+        description: "Số lượng cơ cấu"
+      - name: San_luong_ban
+        description: "Số lượng bán"
+      - name: Sl_Dat_Coc
+        description: "Số lượng đặt cọc"
+      - name: Gia_Tri_Ton
+        description: "Giá trị tồn"
+      - name: Gia_Tri_Ton_Dau_Ky
+        description: "Giá trị tồn đầu kỳ"
+      - name: Gia_Tri_Ton_Trung_Binh
+        description: "Giá trị tồn trung bình"
+      - name: Gia_nhap
+        description: "Giá nhập"
+      - name: Gia_ban_TT
+        description: "Giá bán thực tế"
+      - name: UpdateTime
+        description: "Thời điểm cập nhật"

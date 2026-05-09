@@ -1,0 +1,131 @@
+version: 2
+
+models:
+
+  - name: v_rnd_1_new
+    description: "Mở rộng dữ liệu R&D 1 với thông tin phân loại sản phẩm"
+    columns:
+      - name: MA_MAU
+        description: "Mã màu"
+      - name: PRODUCT_SEGMENT_NEW
+        description: "Phân đoạn sản phẩm mới"
+      - name: "PRODUCT SEGMENT NEW"
+        description: "Phân đoạn sản phẩm mới (bản raw)"
+      - name: PRODUCT_LINE_NEW
+        description: "Dòng sản phẩm mới"
+      - name: "PRODUCT LINE NEW"
+        description: "Dòng sản phẩm mới (bản raw)"
+      - name: PRODUCT_CATEGORY_NEW
+        description: "Danh mục sản phẩm mới"
+      - name: "PRODUCT CATEGORY NEW"
+        description: "Danh mục sản phẩm mới (bản raw)"
+      - name: JEWELRY_TYPE_NEW
+        description: "Loại trang sức mới"
+      - name: "JEWELRY TYPE NEW"
+        description: "Loại trang sức mới (bản raw)"
+      - name: MATERIAL_NEW
+        description: "Vật liệu mới"
+      - name: "MATERIAL NEW"
+        description: "Vật liệu mới (bản raw)"
+      - name: COLLECTION_NEW
+        description: "Bộ sưu tập mới"
+      - name: "COLLECTION NEW"
+        description: "Bộ sưu tập mới (bản raw)"
+      - name: CLASSIFICATION_METHOD
+        description: "Phương pháp phân loại"
+      - name: "CLASSIFICATION METHOD"
+        description: "Phương pháp phân loại (bản raw)"
+      - name: CAN_XEM_XET
+        description: "Cờ xem xét"
+      - name: "CAN XEM XET"
+        description: "Cờ xem xét (bản raw)"
+      - name: LY_DO_XEM_XET
+        description: "Lý do xem xét"
+      - name: "LY DO XEM XET"
+        description: "Lý do xem xét (bản raw)"
+
+  - name: v_rnd_2_new
+    description: "Mở rộng dữ liệu R&D 2 với thông tin phân loại sản phẩm"
+    columns:
+      - name: "MA MAU"
+        description: "Mã màu"
+      - name: PRODUCT_SEGMENT_NEW
+        description: "Phân đoạn sản phẩm mới"
+      - name: "PRODUCT SEGMENT NEW"
+        description: "Phân đoạn sản phẩm mới (bản raw)"
+      - name: PRODUCT_LINE_NEW
+        description: "Dòng sản phẩm mới"
+      - name: "PRODUCT LINE NEW"
+        description: "Dòng sản phẩm mới (bản raw)"
+      - name: PRODUCT_CATEGORY_NEW
+        description: "Danh mục sản phẩm mới"
+      - name: "PRODUCT CATEGORY NEW"
+        description: "Danh mục sản phẩm mới (bản raw)"
+      - name: JEWELRY_TYPE_NEW
+        description: "Loại trang sức mới"
+      - name: "JEWELRY TYPE NEW"
+        description: "Loại trang sức mới (bản raw)"
+      - name: MATERIAL_NEW
+        description: "Vật liệu mới"
+      - name: "MATERIAL NEW"
+        description: "Vật liệu mới (bản raw)"
+      - name: COLLECTION_NEW
+        description: "Bộ sưu tập mới"
+      - name: "COLLECTION NEW"
+        description: "Bộ sưu tập mới (bản raw)"
+      - name: CLASSIFICATION_METHOD
+        description: "Phương pháp phân loại"
+      - name: "CLASSIFICATION METHOD"
+        description: "Phương pháp phân loại (bản raw)"
+      - name: CAN_XEM_XET
+        description: "Cờ xem xét"
+      - name: "CAN XEM XET"
+        description: "Cờ xem xét (bản raw)"
+      - name: LY_DO_XEM_XET
+        description: "Lý do xem xét"
+      - name: "LY DO XEM XET"
+        description: "Lý do xem xét (bản raw)"
+
+  - name: v_rnd_3_new
+    description: "Mở rộng dữ liệu R&D 3 với thông tin phân loại sản phẩm"
+    columns:
+      - name: MA_MAU
+        description: "Mã màu"
+      - name: PRODUCT_SEGMENT_NEW
+        description: "Phân đoạn sản phẩm mới"
+      - name: "PRODUCT SEGMENT NEW"
+        description: "Phân đoạn sản phẩm mới (bản raw)"
+      - name: PRODUCT_LINE_NEW
+        description: "Dòng sản phẩm mới"
+      - name: "PRODUCT LINE NEW"
+        description: "Dòng sản phẩm mới (bản raw)"
+      - name: PRODUCT_CATEGORY_NEW
+        description: "Danh mục sản phẩm mới"
+      - name: "PRODUCT CATEGORY NEW"
+        description: "Danh mục sản phẩm mới (bản raw)"
+      - name: JEWELRY_TYPE_NEW
+        description: "Loại trang sức mới"
+      - name: "JEWELRY TYPE NEW"
+        description: "Loại trang sức mới (bản raw)"
+      - name: MATERIAL_NEW
+        description: "Vật liệu mới"
+      - name: "MATERIAL NEW"
+        description: "Vật liệu mới (bản raw)"
+      - name: COLLECTION_NEW
+        description: "Bộ sưu tập mới"
+      - name: "COLLECTION NEW"
+        description: "Bộ sưu tập mới (bản raw)"
+      - name: CLASSIFICATION_METHOD
+        description: "Phương pháp phân loại"
+      - name: "CLASSIFICATION METHOD"
+        description: "Phương pháp phân loại (bản raw)"
+      - name: CAN_XEM_XET
+        description: "Cờ xem xét"
+      - name: "CAN XEM XET"
+        description: "Cờ xem xét (bản raw)"
+      - name: LY_DO_XEM_XET
+        description: "Lý do xem xét"
+      - name: "LY DO XEM XET"
+        description: "Lý do xem xét (bản raw)"
+
+  

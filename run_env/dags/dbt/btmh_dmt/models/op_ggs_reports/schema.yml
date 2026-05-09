@@ -1,0 +1,64 @@
+version: 2
+
+models:
+  - name: v_coc_ngay
+    description: "Báo cáo cọc theo ngày và công ty"
+    columns:
+      - name: date
+        description: "Ngày báo cáo"
+      - name: company
+        description: "Mã công ty"
+      - name: t_luong_ban_ngay
+        description: "Trọng lượng bán ngày"
+      - name: t_luong_khach_dat
+        description: "Trọng lượng khách đặt"
+      - name: t_luong_tra_coc
+        description: "Trọng lượng trả cọc"
+      - name: so_luong_ban_ngay
+        description: "Số lượng bán ngày"
+      - name: so_luong_khach_dat
+        description: "Số lượng khách đặt"
+      - name: so_luong_tra_coc
+        description: "Số lượng trả cọc"
+      - name: tien_dat
+        description: "Tiền đặt cọc"
+      - name: tien_ban_ngay
+        description: "Tiền bán ngày"
+      - name: tien_tra_coc
+        description: "Tiền trả cọc"
+
+  - name: v_current_inventory_company
+    description: "Tồn kho hiện tại theo công ty"
+    columns:
+      - name: Ten_Hang
+        description: "Tên hàng"
+      - name: Nguon
+        description: "Nguồn dữ liệu / công ty"
+      - name: ton_kho
+        description: "Số lượng tồn kho"
+
+  - name: v_mua_lai
+    description: "Báo cáo mua lại theo công ty và ngày"
+    columns:
+      - name: date
+        description: "Ngày báo cáo"
+      - name: ma_ct_r
+        description: "Mã công ty mua lại"
+      - name: so_luong
+        description: "Số lượng mua lại"
+      - name: t_luong
+        description: "Trọng lượng mua lại"
+      - name: gia_mua
+        description: "Giá mua"
+
+  - name: v_tra_hang_b2b
+    description: "Báo cáo trả hàng B2B theo ngày"
+    columns:
+      - name: date
+        description: "Ngày trả hàng"
+      - name: so_luong
+        description: "Số lượng trả hàng"
+      - name: t_luong
+        description: "Trọng lượng trả hàng"
+      - name: doanh_thu
+        description: "Doanh thu trả hàng"

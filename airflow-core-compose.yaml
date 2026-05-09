@@ -26,6 +26,8 @@ x-airflow-common:
     AIRFLOW__DAG_PROCESSOR__REFRESH_INTERVAL: "180"
     AIRFLOW__SCHEDULER__MIN_FILE_PROCESS_INTERVAL: "90"
     AIRFLOW__SCHEDULER__SCHEDULER_HEARTBEAT_SEC: "10"
+    AIRFLOW__CELERY__WORKER_CONCURRENCY: "1"
+    AIRFLOW__OPENLINEAGE__DISABLED: "true"
     # Make the GCP connection available to execution-time context (triggerer / deferrable operators).
     # NOTE: docker-compose env_file does not expand nested ${VARS} inside values, so we build it here.
     AIRFLOW_CONN_GOOGLE_CLOUD_DEFAULT: "google-cloud-platform://?extra__google_cloud_platform__project=${GCP_PROJECT_ID}&extra__google_cloud_platform__key_path=/opt/airflow/config/gcp-service-account.json&extra__google_cloud_platform__location=${BIGQUERY_LOCATION}"
@@ -76,10 +78,10 @@ services:
       - "8080:8080"
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8080/api/v2/version"]
-      interval: 30s
-      timeout: 10s
+      interval: 60s
+      timeout: 60s
       retries: 5
-      start_period: 30s
+      start_period: 180s
     restart: always
     depends_on:
       airflow-init:
@@ -133,10 +135,10 @@ services:
     command: triggerer
     healthcheck:
       test: ["CMD-SHELL", 'airflow jobs check --job-type TriggererJob --hostname "$${HOSTNAME}"']
-      interval: 30s
-      timeout: 10s
+      interval: 60s
+      timeout: 60s
       retries: 5
-      start_period: 30s
+      start_period: 180s
     restart: always
     depends_on:
       airflow-init:

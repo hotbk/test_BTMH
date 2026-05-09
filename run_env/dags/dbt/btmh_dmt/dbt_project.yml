@@ -1,0 +1,86 @@
+name: btmh_dmt
+version: "1.0.0"
+config-version: 2
+
+profile: default
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  btmh_dmt:
+    +persist_docs:
+      relation: true
+      columns: true
+    dim:
+      +schema: dim
+      +materialized: table
+    fact:
+      +schema: fact
+      +materialized: table
+    mart:
+      +schema: mart
+      +materialized: table
+    op_finance:
+      +schema: mart
+      +materialized: view
+    op_ggs_reports:
+      +schema: mart
+      +materialized: view
+    op_logistic:
+      +schema: mart
+      +materialized: view
+    op_rnd:
+      +schema: mart
+      +materialized: view
+    op_sales:
+      +schema: mart
+      +materialized: view
+
+vars:
+  btmh_use_fixed_datasets: true
+  btmh_fixed_prefix: "{{ env_var('BIGQUERY_DATASET', 'btmh_dwh_fact').replace('_fact', '') }}"
+  btmh_months_back: 6
+  btmh_today_only: false
+  btmh_is_backfill: false
+  btmh_snapshot_append: false
+
+  ggs_schema: "{{ env_var('GGS_BQ_DATASET', 'btmh_stg_ggs') }}"
+  oneoffice_schema: "oneoffice"
+  xlsx_schema: "{{ env_var('GGS_BQ_DATASET', 'btmh_stg_ggs') }}"
+  xlsx_ke_hoach_table: "xlsx_ke_hoach_kinh_doanh"
+
+  d_hang_schema: "stg_augges_225"
+  d_dvt_schema: "stg_augges_225"
+  d_khach_hang_schema: "stg_221_khach_hang"
+  d_nganh_schema: "stg_augges_225"
+  d_nhom_schema: "stg_augges_225"
+  d_nhom_ma_mau_schema: "stg_augges_225"
+  vbtg_schema: "stg_augges_225"
+
+  slbl_sources: &company_sources
+    - {source: "stg_augges_225", code: "NY"}
+    - {source: "stg_augges_224", code: "SX"}
+    - {source: "stg_augges_226", code: "HD"}
+    - {source: "stg_augges_227", code: "BN"}
+    - {source: "stg_augges_sg", code: "SG"}
+
+  dat_coc_sources: *company_sources
+  nhap_xuat_sources: *company_sources
+  dieu_chuyen_sources: *company_sources
+  htk_sources: *company_sources
+  dhang_sources: *company_sources
+  dctkm_sources: *company_sources
+  ddoitac_sources: *company_sources
+  dkho_sources: *company_sources
+  dkmp_sources: *company_sources
+  dmnhang_sources: *company_sources
+  dmnx_sources: *company_sources
+  dnhanvien_sources: *company_sources
+  dthe_sources: *company_sources
