@@ -12,7 +12,7 @@ def test_mssql():
 with DAG(
     dag_id="test_mssql_connection",
     start_date=datetime(2026, 5, 1),
-    schedule_interval=None,
+    schedule=None,
     catchup=False
 ) as dag:
     test = PythonOperator(task_id="test", python_callable=test_mssql)
