@@ -9,6 +9,7 @@ apache-airflow-providers-postgres
 apache-airflow-providers-docker
 apache-airflow-providers-google
 apache-airflow-providers-smtp
+apache-airflow-providers-microsoft-mssql
 
 # dbt orchestration
 astronomer-cosmos==1.12.1
