@@ -1,10 +1,10 @@
 from airflow import DAG
-from airflow.operators.python import PythonOperator
+from airflow.providers.standard.operators.python import PythonOperator
 from airflow.providers.microsoft.mssql.hooks.mssql import MsSqlHook
 from datetime import datetime
 
 def test_mssql():
-    hook = MsSqlHook(mssql_conn_id="mssql_vietdb")
+    hook = MsSqlHook(mssql_conn_id="src_mssql")
     result = hook.get_records("SELECT @@version")
     print("✓ Connection success!")
     print(result)

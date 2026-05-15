@@ -33,6 +33,11 @@ sources:
       - name: vnd_usd
       - name: xau_usd
 
+  - name: mssql
+    schema: "{{ var('mssql_schema', env_var('MSSQL_BQ_DATASET', 'btmh_stg_mssql')) }}"
+    tables:
+      - name: results_bn1
+
   - name: stg_augges_224
     schema: stg_augges_224
     tables:

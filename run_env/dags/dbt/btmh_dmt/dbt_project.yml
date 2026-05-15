@@ -36,6 +36,9 @@ models:
     op_logistic:
       +schema: mart
       +materialized: view
+    op_mssql:
+      +schema: mart
+      +materialized: view
     op_rnd:
       +schema: mart
       +materialized: view
